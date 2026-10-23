@@ -14,7 +14,6 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0d3a2d">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%237a1e2b'/%3E%3Ctext x='32' y='42' font-size='28' text-anchor='middle' fill='%23f1cd88' font-family='serif' font-style='italic'%3EH%26amp;Z%3C/text%3E%3C/svg%3E">
 <style>*,*::before,*::after{box-sizing:border-box}body{margin:0}p,h1{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
@@ -32,12 +31,12 @@
 /* Layout: emerald stage with an 8-point-star lattice and hanging lanterns; envelope first, then one arched (Mughal-dome) ivory card in a scrolling column. Deliberately single-theme. */
 :root{
   --emerald:#0d3a2d; --emerald-deep:#061d15; --ivory:#fbf7ee; --paper:#f3ead6;
-  --gold:#b0832f; --gold-lite:#e2c27a; --gold-pale:#f6e3b0; --ink:#2b2620; --ink-soft:#5d5448; --wax:#7a1e2b;
+  --gold:#94661a; --gold-lite:#e2c27a; --gold-pale:#f6e3b0; --ink:#1c1712; --ink-soft:#42392e; --wax:#7a1e2b;
   --f-script:"Pinyon Script","Great Vibes",cursive;
   --f-display:"Cinzel","Trajan Pro",Georgia,serif;
   --f-body:"Cormorant Garamond",Garamond,Georgia,serif;
   --f-arabic:"Amiri","Noto Naskh Arabic","Traditional Arabic",serif;
-  --gold-foil:linear-gradient(100deg,#8c6420 0%,#c99a45 22%,#f6e2ad 40%,#d4a955 55%,#9a6f27 75%,#e6c77f 100%);
+  --gold-foil:linear-gradient(100deg,#6e4a10 0%,#a8781f 20%,#d4a650 36%,#efcb76 45%,#c8963a 58%,#86601a 78%,#c79a43 100%);
   --lattice:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='%23e2c27a' stroke-opacity='.09' stroke-width='1'%3E%3Crect x='22' y='22' width='28' height='28'/%3E%3Crect x='22' y='22' width='28' height='28' transform='rotate(45 36 36)'/%3E%3Ccircle cx='36' cy='36' r='6'/%3E%3Cpath d='M0 0l16 16M72 0L56 16M0 72l16-16M72 72L56 56'/%3E%3C/g%3E%3C/svg%3E");
   color-scheme:light;
 }
@@ -65,7 +64,7 @@ body{background:radial-gradient(70% 55% at 50% 38%,rgba(226,194,122,.16),transpa
 #stage.gone{opacity:0;visibility:hidden}
 .invite-line{font-family:var(--f-display);letter-spacing:.34em;font-size:12px;color:var(--gold-lite);text-transform:uppercase;text-align:center;display:flex;align-items:center;gap:12px}
 .invite-line::before,.invite-line::after{content:"";width:22px;height:1px;background:var(--gold-lite);opacity:.6}
-.env-names{font-family:var(--f-script);font-size:clamp(40px,11vw,58px);line-height:1.1;text-align:center;margin-top:-14px;background:var(--gold-foil);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 6s linear infinite;filter:drop-shadow(0 2px 10px rgba(226,194,122,.25))}
+.env-names{font-family:var(--f-script);font-size:clamp(40px,11vw,58px);line-height:1.1;text-align:center;margin-top:-14px;background:linear-gradient(100deg,#c99a45 0%,#f3d58c 25%,#fff3cf 42%,#e6bd68 58%,#c8963a 78%,#f6dc95 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 6s linear infinite;filter:drop-shadow(0 2px 10px rgba(226,194,122,.25))}
 .env-names span{font-size:.62em;margin:0 .12em}
 .envelope{position:relative;width:min(340px,86vw);aspect-ratio:3/2;max-width:100%;perspective:1200px;cursor:pointer;border:0;padding:0;background:none;-webkit-tap-highlight-color:transparent;animation:float 5s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
@@ -111,46 +110,50 @@ body{background:radial-gradient(70% 55% at 50% 38%,rgba(226,194,122,.16),transpa
 .lily .leaf{fill:rgba(176,131,47,.12)}
 .drawn .lily path{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.6s ease forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
-.content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center}
+.content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;font-weight:500}
 .drawn .reveal{animation:rise .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 110ms + 300ms)}
 @keyframes rise{from{opacity:0;transform:translateY(14px);filter:blur(3px)}to{opacity:1;transform:none;filter:none}}
 
 .finial{width:26px;height:34px;color:var(--gold);margin-bottom:4px}
-.medallion{position:relative;width:104px;height:104px;display:grid;place-items:center}
-.medallion svg{position:absolute;inset:0;width:100%;height:100%;color:var(--gold)}
-.drawn .medallion svg{animation:spin 40s linear infinite}
+.medallion{position:relative;width:132px;height:132px;display:grid;place-items:center}
+.medallion .ring{position:absolute;inset:0;width:100%;height:100%;color:var(--gold)}
+.drawn .medallion .ring{animation:spin 60s linear infinite}
+.medallion .mono{position:relative;width:70%;height:70%;filter:drop-shadow(0 1px 0 rgba(255,255,255,.9)) drop-shadow(0 2px 3px rgba(110,74,16,.3))}
+.mono svg{display:block;width:100%;height:100%}
+.drawn .mh{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.2s .5s ease forwards}
+.seal .mono{width:60px;height:60px;filter:drop-shadow(0 1px 0 rgba(0,0,0,.45))}
 @keyframes spin{to{transform:rotate(360deg)}}
 .medallion span{font-family:var(--f-script);font-size:36px;line-height:1;background:var(--gold-foil);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .1em}
 .medallion i{font-style:normal;font-size:.6em}
-.bismillah{font-family:var(--f-arabic);font-size:27px;color:var(--ink);line-height:1.6;margin-top:14px}
-.ayah-ar{font-family:var(--f-arabic);font-size:19px;color:var(--gold)}
+.bismillah{font-family:var(--f-arabic);font-weight:700;font-size:28px;color:var(--ink);line-height:1.6;margin-top:14px}
+.ayah-ar{font-family:var(--f-arabic);font-weight:700;font-size:20px;color:var(--gold)}
 .ayah{font-style:italic;font-size:17px;color:var(--ink-soft);margin-top:2px}
 .ref{font-size:13px;letter-spacing:.1em;color:var(--ink-soft)}
-.hosts{font-family:var(--f-display);font-weight:600;color:var(--gold);font-size:17px;letter-spacing:.08em;margin-top:24px}
+.hosts{font-family:var(--f-display);font-weight:600;color:var(--gold);font-size:18px;letter-spacing:.08em;margin-top:24px}
 .lede{font-size:18px;line-height:1.45;color:var(--ink);max-width:30ch;margin-top:4px}
-.event{font-family:var(--f-display);font-weight:600;font-size:clamp(22px,6.4vw,30px);letter-spacing:.16em;margin-top:14px;background:var(--gold-foil);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 5s linear infinite}
+.event{filter:drop-shadow(0 2px 3px rgba(110,74,16,.22));font-family:var(--f-display);font-weight:600;font-size:clamp(22px,6.4vw,30px);letter-spacing:.16em;margin-top:14px;background:var(--gold-foil);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 5s linear infinite}
 @keyframes sheen{from{background-position:120% 0}to{background-position:-120% 0}}
 .small{font-size:16px;color:var(--ink-soft);margin-top:4px}
-.name{font-family:var(--f-script);font-weight:400;font-size:clamp(48px,13.5vw,68px);line-height:1.15;padding:0 .15em;margin-top:4px;background:var(--gold-foil);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 7s linear infinite;filter:drop-shadow(0 1px 0 rgba(255,255,255,.7))}
+.name{font-family:var(--f-script);font-weight:400;font-size:clamp(48px,13.5vw,68px);line-height:1.15;padding:0 .15em;margin-top:4px;background:var(--gold-foil);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 7s linear infinite;filter:drop-shadow(0 1px 0 rgba(255,255,255,.9)) drop-shadow(0 3px 4px rgba(110,74,16,.28))}
 .amp{display:flex;align-items:center;gap:14px;width:100%;max-width:240px;margin:2px 0;color:var(--gold);font-size:17px;font-style:italic}
 .amp::before,.amp::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
 .amp::after{background:linear-gradient(270deg,transparent,var(--gold))}
 .bride-line{font-size:17.5px;font-style:italic;color:var(--ink);max-width:32ch}
 .do{font-size:17px;color:var(--ink);letter-spacing:.04em}
-.ia{font-family:var(--f-arabic);font-size:20px;color:var(--gold);margin-top:22px}
+.ia{font-family:var(--f-arabic);font-weight:700;font-size:21px;color:var(--gold);margin-top:22px}
 .ia small{display:block;font-family:var(--f-body);font-style:italic;font-size:15px;color:var(--ink-soft)}
 .date{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;width:100%;max-width:340px;margin-top:8px}
 .date .side{font-family:var(--f-display);font-size:14px;letter-spacing:.14em;color:var(--ink);border-block:1px solid var(--gold);padding-block:7px}
-.date .day{font-family:var(--f-display);font-weight:600;font-size:58px;line-height:1;font-variant-numeric:lining-nums;background:var(--gold-foil);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+.date .day{filter:drop-shadow(0 2px 3px rgba(110,74,16,.25));font-family:var(--f-display);font-weight:600;font-size:58px;line-height:1;font-variant-numeric:lining-nums;background:var(--gold-foil);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
 .date .day sup{font-size:.3em;vertical-align:top;position:relative;top:.3em;margin-left:2px}
-.venue{font-family:var(--f-display);font-weight:600;color:var(--gold);font-size:16px;letter-spacing:.08em;margin-top:22px}
+.venue{font-family:var(--f-display);font-weight:600;color:var(--gold);font-size:17px;letter-spacing:.08em;margin-top:22px}
 .venue small{font-family:var(--f-body);font-weight:500;font-size:15px;letter-spacing:0;color:var(--ink-soft)}
 .addr{font-size:17px;color:var(--ink)}
 
 .divider{width:100%;max-width:300px;height:24px;margin:26px 0 16px;color:var(--gold)}
 .divider path,.divider circle{fill:none;stroke:currentColor;stroke-width:.9}
 .divider .dot{fill:currentColor;stroke:none}
-.label{font-family:var(--f-display);font-size:11px;letter-spacing:.32em;color:var(--gold);text-transform:uppercase}
+.label{font-family:var(--f-display);font-weight:600;font-size:11.5px;letter-spacing:.32em;color:var(--gold);text-transform:uppercase}
 .countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%;max-width:340px;margin-top:12px}
 .countdown div{position:relative;border:1px solid rgba(176,131,47,.55);border-radius:40px 40px 3px 3px;padding:14px 0 9px;background:linear-gradient(180deg,rgba(255,255,255,.75),rgba(246,227,176,.25))}
 .countdown b{display:block;font-family:var(--f-display);font-weight:600;font-size:24px;color:var(--ink);font-variant-numeric:tabular-nums}
@@ -171,7 +174,7 @@ body{background:radial-gradient(70% 55% at 50% 38%,rgba(226,194,122,.16),transpa
 .phone:focus-visible{outline:2px solid var(--gold)}
 .phone em{font-style:normal;font-family:var(--f-display);font-size:10px;letter-spacing:.2em;color:var(--gold);border:1px solid rgba(176,131,47,.5);border-radius:99px;padding:3px 8px;min-width:62px}
 .closing{font-style:italic;font-size:20px;line-height:1.45;color:var(--ink);max-width:26ch;margin-top:28px}
-.dua{font-family:var(--f-arabic);font-size:19px;line-height:1.8;color:var(--gold);margin-top:18px;max-width:30ch}
+.dua{font-family:var(--f-arabic);font-weight:700;font-size:19px;line-height:1.8;color:var(--gold);margin-top:18px;max-width:30ch}
 .dua-en{font-style:italic;font-size:15px;color:var(--ink-soft);max-width:34ch}
 .replay{margin-top:22px;background:none;border:0;color:var(--ink-soft);font-family:var(--f-body);font-style:italic;font-size:15px;cursor:pointer;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:4px;position:relative;z-index:3}
 .replay:focus-visible{outline:2px solid var(--gold)}
@@ -183,7 +186,7 @@ body{background:radial-gradient(70% 55% at 50% 38%,rgba(226,194,122,.16),transpa
   .lily{width:140px;height:140px}
   .date .day{font-size:50px}
   .date .side{font-size:12.5px}
-  .medallion{width:92px;height:92px}
+  .medallion{width:116px;height:116px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -227,7 +230,7 @@ body{background:radial-gradient(70% 55% at 50% 38%,rgba(226,194,122,.16),transpa
     </span>
     <span class="env-front"></span>
     <span class="env-flap"></span>
-    <span class="seal"><b>H&amp;Z</b></span>
+    <span class="seal"><span class="mono" data-mono="light"></span></span>
   </button>
   <p class="tap">Tap the seal to open</p>
   <p class="env-date">19 · XI · 2026 &nbsp;·&nbsp; KARACHI</p>
@@ -242,13 +245,13 @@ body{background:radial-gradient(70% 55% at 50% 38%,rgba(226,194,122,.16),transpa
     <div class="content">
       <svg class="finial reveal" style="--i:0" viewBox="0 0 26 34" aria-hidden="true"><path d="M13 1 C 17 8, 22 12, 13 22 C 4 12, 9 8, 13 1 Z M13 22 V33 M7 28 H19" fill="none" stroke="currentColor" stroke-width="1.1"/><circle cx="13" cy="13" r="2" fill="currentColor"/></svg>
       <div class="medallion reveal" style="--i:0">
-        <svg viewBox="0 0 120 120" aria-hidden="true">
+        <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
           <circle cx="60" cy="60" r="57" fill="none" stroke="currentColor" stroke-width="1"/>
           <circle cx="60" cy="60" r="52" fill="none" stroke="currentColor" stroke-width="2.2" stroke-dasharray="0.1 6.5" stroke-linecap="round"/>
           <circle cx="60" cy="60" r="47" fill="none" stroke="currentColor" stroke-width=".7"/>
-          <g id="petalring"></g>
+          
         </svg>
-        <span>H<i>&amp;</i>Z</span>
+        <span class="mono" data-mono="dark" role="img" aria-label="H and Z monogram in a heart"></span>
       </div>
 
       <p class="bismillah reveal" style="--i:1" lang="ar" dir="rtl">بسم الله الرحمن الرحيم</p>
@@ -344,9 +347,25 @@ body{background:radial-gradient(70% 55% at 50% 38%,rgba(226,194,122,.16),transpa
     </svg>`;
   });
 
+  /* ---- H|Z heart monogram (from Humayun's sketch) ---- */
+  const HEART='M50 93 C 18 74, 4 54, 7 33 C 9 17, 22 8, 35 10 C 43 11.5, 48 17, 50 23 C 52 17, 57 11.5, 65 10 C 78 8, 91 17, 93 33 C 96 54, 82 74, 50 93 Z';
+  document.querySelectorAll('[data-mono]').forEach((n,i)=>{
+    const light=n.dataset.mono==='light',id='mg'+i;
+    const st=light?['#fff0c4','#e2b45c','#f8dc95']:['#6e4a10','#d7a94f','#8a6118'];
+    n.innerHTML=`<svg viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="${id}" gradientUnits="userSpaceOnUse" x1="10" y1="10" x2="90" y2="90"><stop offset="0" stop-color="${st[0]}"/><stop offset=".5" stop-color="${st[1]}"/><stop offset="1" stop-color="${st[2]}"/></linearGradient></defs>
+      <g fill="none" stroke="url(#${id})" stroke-linecap="round" stroke-linejoin="round">
+        <path class="mh" pathLength="1" stroke-width="${light?2.6:2.2}" d="${HEART}"/>
+        <path d="M32 29V63M68 29V63" stroke-width="4.4"/>
+        <path d="M27 29h10M27 63h10M63 29h10M63 63h10" stroke-width="1.8"/>
+        <path d="M40.5 34H59.5M40.5 58H59.5" stroke-width="2"/>
+        <path d="M59.5 34L40.5 58" stroke-width="4"/>
+        <path d="M42.5 46H57.5" stroke-width="1.8"/>
+      </g></svg>`;
+  });
+
   /* ---- Medallion petal ring ---- */
   const ring=document.getElementById('petalring');
-  for(let i=0;i<16;i++){
+  for(let i=0;ring&&i<16;i++){
     const p=el('path',{d:'M60 9 C 63 13, 63 17, 60 20 C 57 17, 57 13, 60 9 Z',transform:`rotate(${i*22.5} 60 60)`,fill:'currentColor','fill-opacity':'.55'},false);
     ring.appendChild(p);
   }
